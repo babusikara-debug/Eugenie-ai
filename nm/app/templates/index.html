@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ app_name }} | Your learning studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="EduGenie home"><span class="brand-mark">E</span><span>EduGenie</span></a>
+    <div class="status"><span class="status-dot"></span><span>Learning studio</span></div>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">AI study companion</p>
+        <h1>Make the hard parts <em>click.</em></h1>
+        <p class="hero-copy">Ask, unpack, practice, and plan your way through any subject with a calm learning workspace built for momentum.</p>
+      </div>
+      <div class="hero-note"><span class="note-line"></span><span>Five focused tools<br>one place to learn.</span></div>
+    </section>
+    <section class="workspace" aria-label="Learning tools">
+      <aside class="tool-nav">
+        <p class="nav-label">Choose a mode</p>
+        <button class="tool-tab active" data-tool="qa"><span class="tool-number">01</span><span><strong>Ask</strong><small>Get a clear answer</small></span></button>
+        <button class="tool-tab" data-tool="explain"><span class="tool-number">02</span><span><strong>Explain</strong><small>Break down a concept</small></span></button>
+        <button class="tool-tab" data-tool="summarize"><span class="tool-number">03</span><span><strong>Summarize</strong><small>Keep what matters</small></span></button>
+        <button class="tool-tab" data-tool="quiz"><span class="tool-number">04</span><span><strong>Quiz</strong><small>Check your understanding</small></span></button>
+        <button class="tool-tab" data-tool="recommendations"><span class="tool-number">05</span><span><strong>Learn path</strong><small>Build a route forward</small></span></button>
+      </aside>
+      <section class="tool-panel">
+        <div class="panel-heading"><p class="eyebrow" id="tool-kicker">01 / ASK</p><h2 id="tool-title">What are you curious about?</h2><p id="tool-description">Ask a question and get a concise, learner-friendly answer.</p></div>
+        <form id="learning-form">
+          <label for="prompt-input" id="input-label">Your question</label>
+          <textarea id="prompt-input" name="text" rows="5" required placeholder="Which is the largest ocean?"></textarea>
+          <div class="form-footer"><span id="char-count">0 / 12,000</span><button class="primary-button" type="submit"><span id="submit-label">Get answer</span><span class="arrow">&#8594;</span></button></div>
+        </form>
+        <div id="result" class="result" aria-live="polite"><div class="result-empty"><span class="empty-icon">+</span><p>Your response will appear here.</p></div></div>
+      </section>
+    </section>
+  </main>
+  <footer><span>EduGenie</span><span>Learn in small, meaningful steps.</span></footer>
+  <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
